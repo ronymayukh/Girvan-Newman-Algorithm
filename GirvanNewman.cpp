@@ -171,6 +171,11 @@ static bool isSamePath(vector<string> v1, vector<string> v2){
     void printPaths(vector<vector<string>> allPaths){
         
         int n = allPaths.size();
+        
+        if(n == 0){
+            return;
+        }
+        
         sort(allPaths.begin(),allPaths.end(),sortPath);
         
         vector<vector<string>> finalPath;
@@ -186,7 +191,7 @@ static bool isSamePath(vector<string> v1, vector<string> v2){
             
         }
         
-        for(int i=0; i<n;i++){
+        for(int i=0; i<finalPath.size();i++){
             for(int j=0;j<finalPath[i].size()-1;j++){
                 cout<<finalPath[i][j]<<"-> ";
             }
